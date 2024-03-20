@@ -126,20 +126,6 @@ span{
     /* text-shadow: 0 0 10px #c310cc, 0 0 20px #c310cc, 0 0 40px #c310cc, 0 0 80px #c310cc, 0 0 160px #c310cc; */
 }
 
-/* .images {
-    text-align: right;
-} */
-/* 
-.ethereumLogo {
-    position: fixed;
-    right: 12%;
-    top: 55%;
-    transform: translateY(-50%);
-    width: 20%;
-    height: 70%;
-    transition: all 0.3s ease;
-} */
-
 /*  Rollover image styles  */
 .eth-logo 
 {
@@ -149,7 +135,8 @@ span{
     right: 12%;
     transform: translateY(-50%);
 }
-.eth-logo img.Sirv.eth-white {
+.eth-logo img.Sirv.eth-white
+{
     position: absolute;
     top: 0;
     right: 0;
@@ -159,6 +146,15 @@ span{
     opacity: 0;
     transition: opacity .2s;
 }
-  .eth-logo:hover img.Sirv.eth-white {
+.eth-logo:hover img.Sirv.eth-white 
+{
     opacity: 1;
+    /* filter: brightness(150%) saturate(100%); */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #c310cc, 0 0 20px #c310cc, 0 0 40px #c310cc, 0 0 80px #c310cc, 0 0 160px #c310cc;
+    /* box-shadow: 3px 3px 1px #ccc; */
+    /* -webkit-box-shadow: 3px 3px 1px #ccc; */
+    /* -moz-box-shadow: 3px 3px 1px #ccc; */
+    /* filter: brightness(1.2) contrast(1.2) saturate(1.2) blur(15px); */
+    /* box-shadow: 0 0 10px #c310cc, 0 0 20px #c310cc, 0 0 40px #c310cc, 0 0 80px #c310cc, 0 0 160px #c310cc; */
 }
