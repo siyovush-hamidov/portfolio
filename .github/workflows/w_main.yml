@@ -34,5 +34,5 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo mv /home/ubuntu/test.page/portfolio/* /var/www/portfolio/
+            sudo mv /home/ubuntu/test.page/portfolio/* /var/www/html/portfolio/
             sudo service nginx restart
