@@ -1,0 +1,35 @@
+name: Deploy to EC2 on index.html change
+
+on:
+  push:
+    branches:
+      - test
+    paths:
+      - index.html
+# Моё единственное изменение, это в качестве дополнения. Запуск воркфлов при изменении index.html
+jobs:
+  deploy:
+    name: Deploy to EC2 on index.html change
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the files
+        uses: actions/checkout@v2
+
+      - name: Deploy to Cometa-Prod
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST_TEST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.TARGET }}
+
+      - name: Executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST_TEST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            sudo mv /home/ubuntu/test.page/portfolio/* /var/www/html/portfolio
+            sudo service nginx restart
